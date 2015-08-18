@@ -1,0 +1,5 @@
+com/soelynn/fsa/App.class
+com/soelynn/fsa/FSA.class
+com/soelynn/fsa/internal/TransitionTable.class
+com/soelynn/fsa/internal/TransitionTableHelper.class
+com/soelynn/fsa/internal/TransitionTableKey.class

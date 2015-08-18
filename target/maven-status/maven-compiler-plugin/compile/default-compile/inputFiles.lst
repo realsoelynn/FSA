@@ -1,3 +1,5 @@
-/Users/soelynn/OneDrive/Academic/Year 4 Sem 1/CZ4045 - Natural Language Processing/Experiment/fsa/src/main/java/com/soelynn/fsa/TransitionTable.java
 /Users/soelynn/OneDrive/Academic/Year 4 Sem 1/CZ4045 - Natural Language Processing/Experiment/fsa/src/main/java/com/soelynn/fsa/FSA.java
+/Users/soelynn/OneDrive/Academic/Year 4 Sem 1/CZ4045 - Natural Language Processing/Experiment/fsa/src/main/java/com/soelynn/fsa/internal/TransitionTable.java
 /Users/soelynn/OneDrive/Academic/Year 4 Sem 1/CZ4045 - Natural Language Processing/Experiment/fsa/src/main/java/com/soelynn/fsa/internal/TransitionTableKey.java
+/Users/soelynn/OneDrive/Academic/Year 4 Sem 1/CZ4045 - Natural Language Processing/Experiment/fsa/src/main/java/com/soelynn/fsa/internal/TransitionTableHelper.java
+/Users/soelynn/OneDrive/Academic/Year 4 Sem 1/CZ4045 - Natural Language Processing/Experiment/fsa/src/main/java/com/soelynn/fsa/App.java

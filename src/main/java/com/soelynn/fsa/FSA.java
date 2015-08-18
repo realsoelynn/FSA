@@ -1,19 +1,22 @@
 package com.soelynn.fsa;
 
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-public class FSA<T> {
+import com.soelynn.fsa.internal.TransitionTable;
+import com.soelynn.fsa.internal.TransitionTableHelper;
 
-	private static Logger LOGGER = Logger.getLogger(FSA.class.getName());
-	
+public class FSA {
+
 	private static int START_STATE = 0;
 	public static int END_STATE = -1;
 	
-	private TransitionTable<T> transitionTable;
+	private TransitionTable transitionTable;
 	
-	public FSA(TransitionTable<T> transitionTable) throws Throwable {
+	public FSA(String transitionTableFileURL) throws Throwable {
+		this(TransitionTableHelper.loadFromCSV(transitionTableFileURL));
+	}
+	
+	public FSA(TransitionTable transitionTable) throws Throwable {
 		this.transitionTable = transitionTable;
 		
 		if(transitionTable == null) {
@@ -22,13 +25,22 @@ public class FSA<T> {
 		
 	}
 	
-	@SuppressWarnings("unchecked")
-	public boolean d_recognize(T... tape) {
-		return d_recognize(0, START_STATE, tape);
+	public boolean d_recognize(String... tape) {
+		
+		String[] new_tape;
+		
+		// Smart-feature to switch between the input wherether single character or word level input
+		if(tape.length == 1) {
+			new_tape = tape[0].split("(?!^)");
+		} 
+		else {
+			new_tape = tape;
+		}
+		
+		return d_recognize(0, START_STATE, new_tape);
 	}
 	
-	@SuppressWarnings("unchecked")
-	private boolean d_recognize(int startIndex, int currentState, T... tape) {
+	private boolean d_recognize(int startIndex, int currentState, String... tape) {
 		boolean accept = false;
 			
 		for(int index = startIndex; index < tape.length; index++) {

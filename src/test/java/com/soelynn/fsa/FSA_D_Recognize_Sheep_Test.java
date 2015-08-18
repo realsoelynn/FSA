@@ -6,17 +6,11 @@ import org.junit.Test;
 
 public class FSA_D_Recognize_Sheep_Test {
 
-	private static FSA<String> AUTOMATA;
-	private static TransitionTable<String> TRANSITION_TABLE;
+	private static FSA AUTOMATA;
 	
 	@BeforeClass
 	public static void initialize() throws Throwable {
-		TRANSITION_TABLE = new TransitionTable<String>();
-		TRANSITION_TABLE.addEntry("b", 0, 1);
-		TRANSITION_TABLE.addEntry("a", 1, 1);
-		TRANSITION_TABLE.addEntry("!", 1, FSA.END_STATE);
-		
-		AUTOMATA = new FSA<String>(TRANSITION_TABLE);
+		AUTOMATA = new FSA("src/test/resources/sheep_fsa_transition_table.csv");
 	}
 	
 	@Test
